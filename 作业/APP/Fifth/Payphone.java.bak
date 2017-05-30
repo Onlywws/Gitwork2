@@ -1,0 +1,30 @@
+public class Payphone
+{
+	String name;
+	String xinghao;
+	String xitong;
+	int price;
+
+
+	public void call(){
+		System.out.println("It can call");
+	}
+	public void funcation(){
+		System.out.println("It can pay");
+	}
+	public void play(){
+		System.out.println("It can play");
+	}
+	public void speak(){
+		System.out.println("It is "+name+" and "+xinghao+" and "+xitong+" and "+price+"гд");
+	}
+
+
+	public Payphone(String name,String xinghao,String xitong,int price){
+		this.name=name;
+		this.xinghao=xinghao;
+		this.xitong=xitong;
+		this.price=price;
+	}
+
+}

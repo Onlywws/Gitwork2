@@ -1,0 +1,6 @@
+public class Diao
+{
+	public static void main(String [] args){
+		diaoyong();
+	}
+}

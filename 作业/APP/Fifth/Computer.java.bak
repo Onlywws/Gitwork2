@@ -1,0 +1,19 @@
+public class Computer
+{
+	public static void main(String [] args){
+		Dinanao [] a = new Dinanao[3];
+		Dinanao computer1 = new Dinanao("机械革命",5000,"windows","MSI");
+		a[0] = computer1;
+		Diannao computer2 = new Dinanao("炫龙",5000,"windows","神州");
+		a[1] = computer2;
+		Diannao computer3 = new Dinanao("暗影精灵",5000,"windows","HP");
+		a[2] = computer3;
+
+		for (int i=0;i<a.length;i++)
+		{
+			a[i].speak();
+			a[i].funcation();
+		}
+
+	}
+}

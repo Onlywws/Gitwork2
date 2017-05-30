@@ -1,0 +1,5 @@
+public class myfirstapp{
+      public static void main(string[] args){
+           system.out.print("hollow world");
+	   }
+}

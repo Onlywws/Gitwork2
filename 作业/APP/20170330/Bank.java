@@ -1,0 +1,114 @@
+import java.util.*;
+public class Bank{
+	//属性
+	static String name;
+	static int card;
+	static int mima;
+	static double money; 
+	 
+	static Scanner sc = new Scanner(System.in);
+	//构造器
+	public Bank(String name,int card,int mima,double money){
+			this.name=name;
+			this.card=card;
+			this.mima=mima;
+			this.money=money;
+	}
+	//输出
+	public static void speak(){
+		System.out.println("账户名是"+name+"卡号是"+card+"余额为"+money);
+	}
+
+	//方法
+	public static void menu(){
+		System.out.println("-------------请选择------------");
+		System.out.println("-----=========菜单========-----");
+		System.out.println("-----------1.登陆--------------");
+		System.out.println("----=======2.取钱======----");
+		System.out.println("----=======3.存款======----");
+		System.out.println("----=======4.查询余额======----");
+		System.out.println("----=======5.退出菜单======----");
+		int a = sc.nextInt();
+		switch(a){
+			case 1:
+				enter();
+			    break;
+			case 2:
+				drawmoney();
+				break;
+			case 3:
+				paymoney();
+				break;
+			case 4:
+				selectmoney();
+				break;
+			case 5 :
+				exitmenu();
+				break;
+			default:
+				System.out.println("输入有误，请重新输入");
+				menu();
+		}
+	}
+	
+	//登陆
+	public static void enter(){
+		System.out.println("----===请输入账户名===----");
+		String name = sc.next();
+		System.out.println("----===请输入账号===----");
+		int card = sc.nextInt();
+		System.out.println("----===请输入密码===----");
+		int mima = sc.nextInt();
+		
+		
+	}
+
+	//存款
+	public static void drawmoney(){
+		System.out.println("输入要存入的金额");
+		int p = sc.nextInt();
+		
+	}
+	
+	//取款
+	public static void paymoney(){
+	
+	}
+	
+	//查询
+	public static void selectmoney(){
+		System.out.println("----1.指定查询----");
+		System.out.println("----2.全部查询----");
+		int j = sc.nextInt();
+		if(j==1){
+			System.out.println("输入你要查询的账户");
+			String ming = sc.next();
+			for(Bank s:body){
+				if(s!=null && ming.equals(s.name) ){
+					s.speak();
+				}
+			}
+		}else if(j==2){
+			for(Bank s:body){
+				if(s!=null ){
+					s.speak();
+				}
+			}
+		}	
+		System.out.println("--------1.继续查询----------");
+		System.out.println("--------2.返回菜单----------");
+		int h = sc.nextInt();
+		if(h==1){
+			selectmoney();
+		}else if(h==2){
+			menu();
+		}else{
+			System.out.println("输入有误");
+		}		
+	}
+
+	//退出
+	public static void exitmenu(){
+		System.out.println("BEYBEY");
+	}
+}

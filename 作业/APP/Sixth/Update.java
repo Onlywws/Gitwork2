@@ -1,0 +1,201 @@
+import java.util.*;
+
+public class Update{
+	
+	static Update [] wws = new Update[100];//定义数组
+	static int i = 0; 
+
+	private static String studentname;
+	private static int studentage;
+	private static String studentsex;
+
+	public static void main(String args[]){
+		diaoyong();
+	}//主函数
+
+	public static void diaoyong(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("------*****菜单*****------");
+		System.out.println("-----选择你想要的操作-----");
+		System.out.println("----------1.增加----------");
+		System.out.println("----------2.删除----------");
+		System.out.println("----------3.查找----------");
+		System.out.println("----------4.修改----------");
+		System.out.println("----------5.退出----------");
+		int a = sc.nextInt();
+			switch(a){
+				case 1:
+					addstudent();
+					break;
+				case 2:
+					deletestudent();
+					break;
+				case 3:
+					selectstudent();
+					break;
+				case 4:
+					updatestudent();
+					break;
+				case 5:
+					exitstudent();
+					break;
+				default:
+					System.out.println("输入有误");
+			}
+	}
+		//方法：增加
+		public static void addstudent(){
+			boolean flag = true;
+			while(flag){
+				Scanner sc = new Scanner(System.in);
+				System.out.println("请输入学生姓名:");
+				String studentname = sc.next();
+				System.out.println("请输入学生年龄:");
+				int studentage = sc.nextInt();
+				System.out.println("请输入学生性别:");
+				String studentsex = sc.next();
+
+				Update student = new Update(studentname,studentage,studentsex);
+				wws[i]= student;
+				wws[i].speak();
+				i++;
+				System.out.println("------1.录入完成,继续-----");
+				System.out.println("------2.返回菜单----------");
+				int f = sc.nextInt();
+				if(f==1){
+					flag=true;
+				}else if(f==2){
+					flag=false;
+				}else{
+					System.out.println("输入有误");
+					
+				}
+			}
+			diaoyong();
+		}
+		
+		//方法：删除
+		public static void deletestudent(){
+			Scanner sc = new Scanner(System.in);
+			System.out.println("===1.精确删除===");
+			System.out.println("===2.全部删除===");
+			int m = sc.nextInt();
+			if(m==1){
+			System.out.println("请输入删除的姓名");
+			String d = sc.next();
+			for(int o=0;o<wws.length;o++){		
+				if(wws[o]!=null && d.equals(wws[o].studentname)){
+					wws[o]=null;
+					System.out.println("===删除成功===");
+				}
+			}
+				System.out.println("===1.继续删除===");
+				System.out.println("===2.返回菜单===");
+				int l = sc.nextInt();
+				if(l==1){
+					deletestudent();
+				}else if(l==2){
+					diaoyong();
+				 }
+			}
+			if(m==2){
+				for(int o=0;o<wws.length;o++){
+					if(wws[o]!=null){
+						wws[o]=null;
+					}
+				}
+			}
+			System.out.println("返回菜单");
+			diaoyong();
+		}
+			
+
+		//方法：查找
+		public static void selectstudent(){
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("----1.精确查询----");
+			System.out.println("----2.全部查询----");
+			int j = sc.nextInt();
+			if(j==1){
+				System.out.println("输入你要查询的姓名");
+				String xingming = sc.next();
+				for(Update s:wws){
+					if(s !=null && xingming.equals(s.studentname) ){
+						s.speak();
+					}
+		
+				}
+			}else if(j==2){
+				for(Update s:wws){
+					if(s!=null ){
+						s.speak();
+					}
+				}
+			}
+				
+			System.out.println("--------1.继续查询----------");
+			System.out.println("--------2.返回菜单----------");
+			int h = sc.nextInt();
+			if(h==1){
+				selectstudent();
+			}else if(h==2){
+				diaoyong();
+			}else{
+				System.out.println("输入有误");
+			}
+			
+		}
+
+		//方法：更新
+		public static void updatestudent(){
+			Scanner sc = new Scanner(System.in);
+			System.out.println("===请输入要修改的姓名==");
+			String newname = sc.next();
+			for(int p=0;p<wws.length;p++){
+				if(wws[p]!=null && newname.equals(wws[p].studentname)){
+					System.out.println("请输入学生姓名:");
+					String name = sc.next();
+					System.out.println("请输入学生年龄:");
+					int age = sc.nextInt();
+					System.out.println("请输入学生性别:");
+					String sex = sc.next();
+					Update student = new Update(name,age,sex);
+					wws[p] = student;
+					System.out.println("修改成功");
+				}else{
+					System.out.println("没有您输入的学生的资料，请重新输入");
+				}
+				System.out.println("===1.继续修改===");
+				System.out.println("===2.返回菜单===");
+				int l = sc.nextInt();
+				if(l==1){
+					updatestudent();
+				}else if(l==2){
+					diaoyong();
+				 }
+			}
+			diaoyong();
+		}
+
+		//方法：退出
+		public static void exitstudent(){
+			System.out.println("ByeBye!");
+		}
+
+		//方法：输出
+		public static void speak(){
+			System.out.println("名字叫"+studentname+","+studentage+"岁，性别"+studentsex);
+		}
+
+		//构造器
+		public Update(String studentname,int studentage,String studentsex){
+			this.studentname=studentname;
+			this.studentage=studentage;
+			this.studentsex=studentsex;
+		}
+
+}
+/*
+
+*/

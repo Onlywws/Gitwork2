@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Mianxiang{
+	public static void main (String [] args){
+		public static Student{
+			Student student[] = new Student[3];
+			Student student1 = new Student("lizhengli",20,'ÄĞ');
+			student[0] = student1;
+			Student student2 = new Student("lixiang",20,'ÄĞ');
+			student[1] = student2;
+			Student student3 = new Student("zhouhongcheng",20,'ÄĞ');
+			student[2] = student3;
+			for(int i=0;i<student.length;i++){
+				student[i].say();
+				student[i].sleep();
+			}
+		}
+	}
+}

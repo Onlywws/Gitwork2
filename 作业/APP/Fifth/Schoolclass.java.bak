@@ -1,0 +1,22 @@
+public class Schoolclass
+{
+	String schoolname;
+	int area;
+	String tall;
+
+	public void teach(){
+		System.out.println("teaching");
+	}
+	public void after(){
+		System.out.println("afterschool");
+	}
+	public void speak(){
+		System.out.println("MY school is"+schoolname+" in "+" linyi "+tall);
+	}
+
+	public Schoolclass(String schoolname,int area,String tall){
+		this.schoolname=schoolname;
+		this.area=area;
+		this.tall=tall;
+	}
+}

@@ -1,0 +1,14 @@
+public class Jiaohuan{
+	public static void main(String args[]){
+		int a,b;
+		a=12;b=24;
+		swep(a,b);
+		System.out.println("a="+a+",b="+b);
+	}
+	public static void swep(int a,b){
+		int temp=a;
+		a=b;
+		b=temp;
+		System.out.println("a="+a+",b="+b);
+	}
+}
